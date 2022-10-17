@@ -16,58 +16,64 @@
   <body class="m-auto w-5/6 bg-blue-300 font-roboto text-white">
     <header class="text-center mt-14 mb-6">
       <h1 id="title" class="font-bold text-3xl">Keyboard Survey Form</h1>
-      <p class="text-lg">Thank you for taking the time to fill out my survey</p>
+      <p id="description" class="text-lg">
+        Thank you for taking the time to fill out my survey
+      </p>
     </header>
     <main class="bg-indigo-800 p-10 rounded-md mb-3">
-      <form action="">
-        <div class="mb-6">
-          <label id="name-label" for="name-input" class="mb-2">Name</label>
+      <form id="survey-form" action="">
+        <div id="name-container" class="mb-6">
+          <label id="name-label" for="name" class="mb-2">Name</label>
           <input
-            name="name-input"
-            id="name-input"
+            name="name"
+            id="name"
             type="text"
             placeholder="   Enter your name"
             class="p-1 rounded-sm min-w-full text-slate-600"
+            required
           />
         </div>
-        <div class="mb-6">
-          <label id="email-label" for="email-input" class="mb-2">Email</label>
+        <div id="email-container" class="mb-6">
+          <label id="email-label" for="email" class="mb-2">Email</label>
           <input
-            name="email-input"
-            id="email-input"
+            name="email"
+            id="email"
             type="email"
             placeholder="  Enter your Email"
             class="p-1 rounded-sm min-w-full text-slate-600"
+            required
           />
         </div>
-        <div class="mb-6">
-          <label id="age-label" for="age-input" class="mb-2"
+        <div id="age-container" class="mb-6">
+          <label id="number-label" for="number" class="mb-2"
             >Age(optional)</label
           >
           <input
-            name="age-input"
-            id="age-input"
+            name="number"
+            id="number"
             type="number"
             placeholder="  Age"
             class="p-1 rounded-sm min-w-full text-slate-600"
+            min="13"
+            max="150"
           />
         </div>
-        <div class="mb-6">
-          <label id="size-label" for="size-select" class="mb-2"
+        <div id="select-container" class="mb-6">
+          <label id="dropdown-label" for="dropdown" class="mb-2"
             >Which option best describes your keyboard</label
           >
           <select
-            name="size-select"
-            id="size-select"
+            name="dropdown"
+            id="dropdown"
             class="p-1 rounded-sm min-w-full text-slate-600"
           >
-            <option disabled selected value>Select a job</option>
+            <option disabled selected value>Select an option</option>
             <option value="Full-Sized (104 key)">Full-Sized (104 key)</option>
             <option value="TKL (87 key)">TKL (87 key)</option>
             <option value=" 60% (68 key)">60% (68 key)</option>
           </select>
         </div>
-        <div class="mb-6">
+        <div id="radio-container" class="mb-6">
           <p class="mb-2">Would you recommend your keyboard to a friend?</p>
           <div>
             <input
@@ -98,7 +104,7 @@
             <label for="unsure-radio">Unsure</label>
           </div>
         </div>
-        <div class="mb-6">
+        <div id="checkbox-container" class="mb-6">
           <p class="mb-2">
             What would you like to see improved? (check all that apply)
           </p>
@@ -119,7 +125,7 @@
             <label for="sound">Sound</label>
           </div>
         </div>
-        <div class="mb-6">
+        <div id="textarea-container" class="mb-6">
           <p class="text-xl mb-2">Any comments or suggestions?</p>
           <textarea
             name="comment-area"
@@ -130,8 +136,9 @@
             placeholder="  Enter your coments here..."
           ></textarea>
         </div>
-        <div class="mb-6">
+        <div id="submit-container">
           <input
+            id="submit"
             type="submit"
             value="Submit"
             class="bg-green-600 min-w-full p-3 rounded-sm hover:bg-green-500 active:bg-green-700"
